@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 .container-principal{
     width: 100%;
-    background-color: grey;
+    background-color: #e5e5e5;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    padding: 92px 0;
+    padding-bottom: 92px;
+    padding-top: 107px;
 }
 header{
     background-color: #CF2B2B;
@@ -20,6 +21,7 @@ header{
     top:0;
     left:auto;
     z-index: 1;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 header p:nth-child(1) {
     color: #FFFFFF;
@@ -40,13 +42,13 @@ header p:nth-child(2) {
 }
 .pedido{
     width: 414px;
-    height: 290px;
+    height: 300px;
     background-color: #e5e5e5;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     padding-left: 21px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 .pedido p:first-child{
     color: #333333;
@@ -56,10 +58,11 @@ header p:nth-child(2) {
     font-size: 26px;
     line-height: 32px;
     letter-spacing: 0.018em;
-    padding-bottom: 17px;
+    margin-top: 15px;
+    margin-bottom: 17px;
 }
 .escolhas{
-    background-color: #e5e5e5e;
+    background-color: #e5e5e5;
     display: flex;
     overflow-x: scroll;
     overflow-y:hidden;
@@ -68,6 +71,7 @@ header p:nth-child(2) {
 .pratos img{
     width:144px;
     height: 87px;
+    border-radius: 4px;
 }
 .pratos{
     background-color: #FFFFFF;
@@ -78,6 +82,9 @@ header p:nth-child(2) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    box-shadow: 0 0 10px -4px rgba(0, 0, 0, 0.25);
     padding: 18px 14px;
     margin-right: 16px;
 }
@@ -105,8 +112,28 @@ header p:nth-child(2) {
     font-size: 16px;
     line-height: 19px;
 }
+.icone ion-icon {
+    color:#ffffff;
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    bottom:15px;
+    right:13px;
+}
+.selecionadoB ion-icon,.selecionadoR ion-icon,.selecionadoS ion-icon {
+    color:#32B72F;
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    bottom:15px;
+    right:13px;
+}
+.selecionadoB,.selecionadoR,.selecionadoS{
+    box-shadow: 0 0 0 5px #32B72F inset;
+}
+
 footer{
-    background-color: green;
+    background-color: white;
     width: 414px;
     height: 92px;
     display: flex;
@@ -133,4 +160,7 @@ button p{
     line-height: 23px;
     text-align: center;
     letter-spacing: 0.018em;
+}
+.fecharPedido button{
+    background-color: #32B72F;
 }

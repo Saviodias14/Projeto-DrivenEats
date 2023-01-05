@@ -19,23 +19,26 @@
         <div class="pedido">
             <p>Primeiro, seu prato</p>
             <div class="escolhas">
-                <div class="pratos">
+                <div class="pratos frango" onclick="selecionaRefeicao('.frango')">
                     <img src="./img/frango_yin_yang.png">
                     <p>Frango Yin Yang</p>
                     <p>Um pouco de batata, um pouco de salada</p>
                     <p>R$ 14,90</p>
+                    <div class="icone"><ion-icon name="checkmark-circle"></ion-icon></div>
                 </div>
-                <div class="pratos">
-                    <img src="./img/frango_yin_yang.png">
-                    <p>Frango Yin Yang</p>
-                    <p>Um pouco de batata, um pouco de salada</p>
-                    <p>R$ 14,90</p>
+                <div class="pratos carbonara" onclick="selecionaRefeicao('.carbonara')">
+                    <img src="./img/carbonara.jpeg">
+                    <p>Carbonara</p>
+                    <p>Massa italiana com pancetta e molho</p>
+                    <p>R$ 22,90</p>
+                    <div class="icone"><ion-icon name="checkmark-circle"></ion-icon></div>
                 </div>
-                <div class="pratos">
-                    <img src="./img/frango_yin_yang.png">
-                    <p>Frango Yin Yang</p>
-                    <p>Um pouco de batata, um pouco de salada</p>
-                    <p>R$ 14,90</p>
+                <div class="pratos risoto" onclick="selecionaRefeicao('.risoto')">
+                    <img src="./img/risoto.jpeg">
+                    <p>Risoto</p>
+                    <p>Risoto de carne seca com queijo qualho</p>
+                    <p>R$ 25,90</p>
+                    <div class="icone"><ion-icon name="checkmark-circle"></ion-icon></div>
                 </div>
                 
             </div>
@@ -43,23 +46,26 @@
         <div class="pedido">
             <p>Agora, sua bebida</p>
             <div class="escolhas">
-                <div class="pratos">
+                <div class="pratos coca" onclick="selecionaBebida('.coca')">
                     <img src="./img/coca-cola.png">
-                    <p>Frango Yin Yang</p>
-                    <p>Um pouco de batata, um pouco de salada</p>
-                    <p>R$ 14,90</p>
+                    <p>Coquinha gelada</p>
+                    <p>Lata 350ml</p>
+                    <p>R$ 7,80</p>
+                    <div class="icone"><ion-icon name="checkmark-circle"></ion-icon></div>
                 </div>
-                <div class="pratos">
-                    <img src="./img/coca-cola.png">
-                    <p>Frango Yin Yang</p>
-                    <p>Um pouco de batata, um pouco de salada</p>
-                    <p>R$ 14,90</p>
+                <div class="pratos jesus" onclick="selecionaBebida('.jesus')">
+                    <img src="./img/jesus.jpeg">
+                    <p>Guaraná Jesus</p>
+                    <p>Lata 350ml</p>
+                    <p>R$ 8,50</p>
+                    <div class="icone"><ion-icon name="checkmark-circle"></ion-icon></div>
                 </div>
-                <div class="pratos">
-                    <img src="./img/coca-cola.png">
-                    <p>Frango Yin Yang</p>
-                    <p>Um pouco de batata, um pouco de salada</p>
-                    <p>R$ 14,90</p>
+                <div class="pratos pepsi" onclick="selecionaBebida('.pepsi')">
+                    <img src="./img/pepsi.jpeg">
+                    <p>Pepsi</p>
+                    <p>Pode ser muito bom (350ml)</p>
+                    <p>R$ 6,90</p>
+                    <div class="icone"><ion-icon name="checkmark-circle"></ion-icon></div>
                 </div>
                 
             </div>
@@ -67,28 +73,31 @@
         <div class="pedido">
             <p>Por fim, sua sobremesa</p>
             <div class="escolhas">
-                <div class="pratos">
+                <div class="pratos pudim" onclick="selecionaSobremesa('.pudim')">
                     <img src="./img/pudim.png">
-                    <p>Frango Yin Yang</p>
-                    <p>Um pouco de batata, um pouco de salada</p>
-                    <p>R$ 14,90</p>
+                    <p>Pudim</p>
+                    <p>Apenas pudim</p>
+                    <p>R$ 7,90</p>
+                    <div class="icone"><ion-icon name="checkmark-circle"></ion-icon></div>
                 </div>
-                <div class="pratos">
-                    <img src="./img/pudim.png">
-                    <p>Frango Yin Yang</p>
-                    <p>Um pouco de batata, um pouco de salada</p>
-                    <p>R$ 14,90</p>
+                <div class="pratos brownie" onclick="selecionaSobremesa('.brownie')">
+                    <img src="./img/brownie.jpeg">
+                    <p>Brownie</p>
+                    <p>Acompanha sorvete de creme</p>
+                    <p>R$ 13,90</p>
+                    <div class="icone"><ion-icon name="checkmark-circle"></ion-icon></div>
                 </div>
-                <div class="pratos">
-                    <img src="./img/pudim.png">
-                    <p>Frango Yin Yang</p>
-                    <p>Um pouco de batata, um pouco de salada</p>
-                    <p>R$ 14,90</p>
+                <div class="pratos creme" onclick="selecionaSobremesa('.creme')">
+                    <img src="./img/brulee.jpeg">
+                    <p>Crème Brulée</p>
+                    <p>Um clássico Francês</p>
+                    <p>R$ 18,90</p>
+                    <div class="icone"><ion-icon name="checkmark-circle"></ion-icon></div>
                 </div>
                 
             </div>
         </div>
-        <footer>
+        <footer class="botao">
             <button>
                 <p>Selecione os 3 itens para fechar o pedido</p>
             </button>
@@ -96,6 +105,7 @@
     </div>
 
     <script src="./js/comando.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     
 </body>
 </html>
