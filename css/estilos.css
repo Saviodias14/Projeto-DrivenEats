@@ -65,7 +65,8 @@ header p:nth-child(2) {
     background-color: #e5e5e5;
     display: flex;
     overflow-x: scroll;
-    overflow-y:hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .pratos img{
@@ -149,10 +150,8 @@ button{
     width: 364px;
     height: 61px;
     border-radius: 50px;
-    border: none;
-}
-button p{
     color:#FFFFFF;
+    border:none;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -163,4 +162,8 @@ button p{
 }
 .fecharPedido button{
     background-color: #32B72F;
+}
+.fecharPedido button:hover{
+    background-color: #158013;
+    cursor: pointer;
 }
