@@ -78,8 +78,3 @@ function mensagem(){
     const link = encodeURIComponent(mensagemZap);
     open("https://wa.me/5531991472152?text="+link);
 }
- //Olá, gostaria de fazer o pedido:
-//- Prato: Frango Yin Yang
-//- Bebida: Coquinha Gelada
-//- Sobremesa: Pudim
-//Total: R$ 27.70
