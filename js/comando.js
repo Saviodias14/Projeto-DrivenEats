@@ -6,15 +6,7 @@ function selecionaRefeicao(refeicaoSelecionada){
     const selecao = document.querySelector(refeicaoSelecionada);
     selecao.classList.add("selecionadoR");
     
-    const R = document.querySelector(".selecionadoR");
-    const B = document.querySelector(".selecionadoB");
-    const S = document.querySelector(".selecionadoS");
-    if((R!==null)&&(B!==null)&&(S!==null)){
-        const ligar = document.querySelector(".botao");
-        ligar.classList.add("fecharPedido");
-        document.querySelector("button").innerHTML="Fechar pedido";
-        document.querySelector("button").disabled = false;
-    }
+    habilitaBotao()
 }
 
 function selecionaBebida(bebidaSelecionada){
@@ -27,15 +19,7 @@ function selecionaBebida(bebidaSelecionada){
     const selecao = document.querySelector(bebidaSelecionada);
     selecao.classList.add("selecionadoB");
 
-    const R = document.querySelector(".selecionadoR");
-    const B = document.querySelector(".selecionadoB");
-    const S = document.querySelector(".selecionadoS");
-    if((R!==null)&&(B!==null)&&(S!==null)){
-        const ligar = document.querySelector(".botao");
-        ligar.classList.add("fecharPedido");
-        document.querySelector("button").innerHTML="Fechar pedido";
-        document.querySelector("button").disabled = false;
-    }
+    habilitaBotao()
     }
 
 function selecionaSobremesa(sobremesaSelecionada){
@@ -47,18 +31,49 @@ function selecionaSobremesa(sobremesaSelecionada){
     const selecao = document.querySelector(sobremesaSelecionada);
     selecao.classList.add("selecionadoS");
 
+    habilitaBotao()
+}
+
+function habilitaBotao(){
     const R = document.querySelector(".selecionadoR");
     const B = document.querySelector(".selecionadoB");
     const S = document.querySelector(".selecionadoS");
     if((R!==null)&&(B!==null)&&(S!==null)){
-        const ligar = document.querySelector(".botao");
+        const ligar = document.querySelector(".botao1");
         ligar.classList.add("fecharPedido");
-        document.querySelector("button").innerHTML="Fechar pedido";
-        document.querySelector("button").disabled = false;
+        document.querySelector(".botao1 button").innerHTML="Fechar pedido";
+        document.querySelector(".botao1 button").disabled = false;
     }
 }
 
 function mensagem(){
+    if(document.querySelector(".botao1 button").disabled === false){
+        const fulano = prompt("Qual é o seu nome?");
+        const rua = prompt("qual é o seu endereço?");
+
+        const prato = document.querySelector(".selecionadoR p").innerHTML;
+        const bebida = document.querySelector(".selecionadoB p").innerHTML;
+        const sobremesa = document.querySelector(".selecionadoS p").innerHTML;
+        let precoPrato = (document.querySelector(".selecionadoR p:nth-child(4)").innerHTML.replace(/[^0-9,]/g,'')).replace(",",".");
+        let precoBebida = (document.querySelector(".selecionadoB p:nth-child(4)").innerHTML.replace(/[^0-9,]/g,'')).replace(",",".");
+        let precoSobremesa = (document.querySelector(".selecionadoS p:nth-child(4)").innerHTML.replace(/[^0-9,]/g,'')).replace(",",".");
+    
+        precoPrato = Number(precoPrato);
+        precoBebida = Number(precoBebida);
+        precoSobremesa = Number(precoSobremesa);
+        const total = precoPrato+precoBebida+precoSobremesa;
+        const mensagemZap = `Olá, gostaria de fazer o pedido:\n
+        - Prato: ${prato}\n
+        - Bebida: ${bebida}\n
+        - Sobremesa: ${sobremesa}\n
+        Total: R$ ${total.toFixed(2)}\n\n
+        Nome: ${fulano}\n
+        Endereço: ${rua}`
+        const link = encodeURIComponent(mensagemZap);
+        open("https://wa.me/5531992020599?text="+link);
+    }
+}
+function finalizaPedido(){
     const prato = document.querySelector(".selecionadoR p").innerHTML;
     const bebida = document.querySelector(".selecionadoB p").innerHTML;
     const sobremesa = document.querySelector(".selecionadoS p").innerHTML;
@@ -69,12 +84,22 @@ function mensagem(){
     precoPrato = Number(precoPrato);
     precoBebida = Number(precoBebida);
     precoSobremesa = Number(precoSobremesa);
-    const total = precoPrato+precoBebida+precoSobremesa;
-    const mensagemZap = `Olá, gostaria de fazer o pedido:\n
-    - Prato: ${prato}\n
-    - Bebida: ${bebida}\n
-    - Sobremesa: ${sobremesa}\n
-    Total: R$ ${total.toFixed(2)}`
-    const link = encodeURIComponent(mensagemZap);
-    open("https://wa.me/5531991472152?text="+link);
+    let total = precoPrato+precoBebida+precoSobremesa;
+    total = total.toFixed(2);
+    precoBebida = precoBebida.toFixed(2);
+    precoPrato = precoPrato.toFixed(2);
+    precoSobremesa = precoSobremesa.toFixed(2);
+
+    document.querySelector(".primeiroPedido p").innerHTML = prato;
+    document.querySelector(".primeiroPedido p:last-child").innerHTML=`R$ ${precoPrato}`.replace(".",",");
+    document.querySelector(".segundoPedido p").innerHTML = bebida;
+    document.querySelector(".segundoPedido p:last-child").innerHTML=`R$ ${precoBebida}`.replace(".",",");
+    document.querySelector(".terceiroPedido p").innerHTML = sobremesa;
+    document.querySelector(".terceiroPedido p:last-child").innerHTML=`R$ ${precoSobremesa}`.replace(".",",");
+    document.querySelector(".total p:last-child").innerHTML= `R$ ${total}`.replace(".",",");
+
+    document.querySelector(".transparente").classList.remove("finalizar");
+}
+function voltar(){
+    document.querySelector(".transparente").classList.add("finalizar");    
 }
