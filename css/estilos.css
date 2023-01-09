@@ -3,6 +3,7 @@
     width: 414px;
     background-color: #e5e5e5;
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     flex-direction: column;
     align-items: center;

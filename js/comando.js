@@ -70,7 +70,7 @@ function mensagem(){
         Nome: ${fulano}\n
         Endereço: ${rua}`
         const link = encodeURIComponent(mensagemZap);
-        open("https://wa.me/5531992020599?text="+link);
+        open("https://wa.me/5531999999999?text="+link);
     }
 }
 function finalizaPedido(){
